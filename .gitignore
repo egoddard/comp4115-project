@@ -1,3 +1,6 @@
 *.swp
 *.pyc
 /data
+maps/
+*.pdf
+time.md
