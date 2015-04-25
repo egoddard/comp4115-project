@@ -96,4 +96,9 @@ BEGIN
             EXECUTE 'DELETE FROM env_issues WHERE env_id IS NULL or env_id IN '
                 || '(''<Null>'', '''', '' '')';
     END LOOP;
+
+    -- Update the whpa_id column from the wellhead_proection_zones table
+    EXECUTE 'UPDATE facilities as f SET whpa_id = w.whpa_id FROM '
+        || 'wellhead_protection_zones as w '
+        || 'WHERE ST_Intersects(f.wkb_geometry, w.wkb_geometry)';
 END$$;
