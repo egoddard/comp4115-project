@@ -3,6 +3,7 @@ drop table if exists env_issues;
 drop table if exists hyperlinks;
 drop table if exists property_types;
 drop table if exists facility_types;
+drop table if exists wellhead_protection_zones;
 
 create table facilities(
     ogc_fid serial not null, 
@@ -35,4 +36,6 @@ create table hyperlinks(
 create table property_types(property_type text not null primary key);
 create table facility_types(facility_type text not null primary key);
 
+create table wellhead_protection_zones(ogc_fid serial not null, well_field text,
+    aquifer text, wkb_geometry geometry(MultiPolygon,2274));
 
