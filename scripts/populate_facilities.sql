@@ -25,7 +25,7 @@ BEGIN
     FOR tables in select table_name from information_schema.tables 
     where 
         table_schema='public' and table_type = 'BASE TABLE' 
-        and table_name like '%complete' LOOP
+        and table_name like '%_csi_2014%' LOOP
             -- Get the column name for the comments attribute, since it is
             -- spelled slightly different in the tables we want to merge.
             EXECUTE 'SELECT column_name from information_schema.columns
