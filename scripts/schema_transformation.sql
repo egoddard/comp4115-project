@@ -36,6 +36,6 @@ create table hyperlinks(
 create table property_types(property_type text not null primary key);
 create table facility_types(facility_type text not null primary key);
 
-create table wellhead_protection_zones(ogc_fid serial not null, well_field text,
-    aquifer text, wkb_geometry geometry(MultiPolygon,2274));
+create table wellhead_protection_zones(ogc_fid serial not null, whpa_id text, 
+    well_field text, aquifer text, wkb_geometry geometry(MultiPolygon,2274));
 
