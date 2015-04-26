@@ -7,7 +7,7 @@ DECLARE
     tables RECORD;
 
 BEGIN
-    TRUNCATE wellhead_protection_zones;
+    TRUNCATE wellhead_protection_zones CASCADE;
 
     FOR tables IN SELECT table_name FROM information_schema.tables
     WHERE

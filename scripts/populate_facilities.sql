@@ -17,9 +17,7 @@ DECLARE
 
 
 BEGIN
-    TRUNCATE facilities;
-    TRUNCATE hyperlinks;
-    TRUNCATE env_issues;
+    TRUNCATE facilities, hyperlinks, env_issues;
 
 
     FOR tables in select table_name from information_schema.tables 
