@@ -6,7 +6,7 @@ drop table if exists facility_types;
 drop table if exists wellhead_protection_zones;
 
 create table facilities(
-    ogc_fid serial not null, 
+    ogc_fid serial not null primary key, 
     wkb_geometry geometry(Point,2274),  
     facility_id text,
     facility_name text,
@@ -21,7 +21,7 @@ create table facilities(
     comments text);
 
 create table env_issues(
-    id serial not null,
+    id serial not null primary key,
     env_id text,
     facility_id text,
     issue text,
@@ -36,6 +36,10 @@ create table hyperlinks(
 create table property_types(property_type text not null primary key);
 create table facility_types(facility_type text not null primary key);
 
-create table wellhead_protection_zones(ogc_fid serial not null, whpa_id text, 
-    well_field text, aquifer text, wkb_geometry geometry(MultiPolygon,2274));
+create table wellhead_protection_zones(
+    ogc_fid serial not null primary key,
+    whpa_id text, 
+    well_field text,
+    aquifer text, 
+    wkb_geometry geometry(MultiPolygon,2274));
 
