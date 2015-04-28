@@ -21,6 +21,9 @@ The goals of the project were to:
     3. Automate updating of the source regulatory data. 
     4. Automate the generation of reports. (Completed) 
 
+The Github repo is at [https://github.com/egoddard/comp4115-project](https://github.com/egoddard/comp4115-project). 
+The Github presentation link is [http://egoddard.github.io/comp4115-project](http://egoddard.github.io/comp4115-project).
+
 ##Goals
 ###1 and 2: normalization and migration
 The source database consists of 26 wellhead protection area (WHPA) boundaries 
