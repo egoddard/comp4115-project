@@ -4,3 +4,5 @@
 maps/
 *.pdf
 time.md
+venv/
+test_output
