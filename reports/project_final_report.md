@@ -29,9 +29,9 @@ spread across 24 tables. In addition to descriptive fields such as facility
 name, address, phone number, etc., each of the 24 tables contains between 
 one and nine paired columns that represent an environmental issue id number and 
 description. The list of attributes in each of the CSI tables can be seen in 
-[schema/csi_fields.md](schema/csi_fields.md). 
+[schema/csi_fields.md](../schema/csi_fields.md). 
 
-![The new schema design](schema/csi_schema.png "Figure 1: New schema design") 
+![The new schema design](../schema/csi_schema.png "Figure 1: New schema design") 
 
 The new schema design (Figure 1) contains six tables: facilities, hyperlinks, 
 facility\_types, property\_types, env\_issues, and wellhead\_protection\_zones. 
@@ -75,15 +75,15 @@ Moving these values as pairs into the env_issues table required building up an
 `INSERT` query one pair of environmental fields at a time using `UNION`.
 
 The code for migrating the wellhead protection areas is in 
-[scripts/merge_zones.sql](scripts/merge_zones.sql), but it was straightforward. 
+[scripts/merge_zones.sql](../scripts/merge_zones.sql), but it was straightforward. 
 After the zones are merged and facilities populated, a PostGIS spatial query 
 is used to assign the whpa\_id from the zones to the whpa\_id field in the 
 facilities table where their geometries intersect.
 
 The code to create the normalized schema is in 
-[scripts/schema_transformation.sql](scripts/schema_transformation.sql). The 
+[scripts/schema_transformation.sql](../scripts/schema_transformation.sql). The 
 code to populate the facilities is in 
-[scripts/populate_facilities.sql](scripts/populate_facilities.sql).
+[scripts/populate_facilities.sql](../scripts/populate_facilities.sql).
 
 ##3 - Automate updating of the source regulatory data
 The current process of updating existing CSI records and adding new facilities 
@@ -115,8 +115,8 @@ First, a view was created that consolidates all of the information required
 for the report into one table. Using the psycopg2 and xlwt libraries with 
 Python, a script was written to query for each WHPA and export an Excel 
 spreadsheet. The code for the view is in 
-[scripts/report_view.sql](scripts/report_view.sql). The Python code is in 
-[scripts/generate_report.py](scripts/generate_report.py).
+[scripts/report_view.sql](../scripts/report_view.sql). The Python code is in 
+[scripts/generate_report.py](../scripts/generate_report.py).
 
 #Conclusion
 This project was a decent introduction to database redesign using a real-world 
